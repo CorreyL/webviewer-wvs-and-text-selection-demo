@@ -15,9 +15,9 @@ const App = () => {
       },
       viewer.current,
     ).then((instance) => {
-      const { docViewer, Tools } = instance;
+      const { docViewer, annotManager, Tools } = instance;
       Tools.Tool.ENABLE_TEXT_SELECTION = false;
-
+      annotManager.setReadOnly(true);
       docViewer.setWatermark({
         // Draw diagonal watermark in middle of the document
         diagonal: {
