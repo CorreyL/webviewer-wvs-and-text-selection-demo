@@ -15,22 +15,29 @@ const App = () => {
       },
       viewer.current,
     ).then((instance) => {
-      const { Tools } = instance;
+      const { docViewer, Tools } = instance;
       Tools.Tool.ENABLE_TEXT_SELECTION = false;
 
-      docViewer.on('documentLoaded', () => {
-        const rectangleAnnot = new Annotations.RectangleAnnotation();
-        rectangleAnnot.PageNumber = 1;
-        // values are in page coordinates with (0, 0) in the top left
-        rectangleAnnot.X = 100;
-        rectangleAnnot.Y = 150;
-        rectangleAnnot.Width = 200;
-        rectangleAnnot.Height = 50;
-        rectangleAnnot.Author = annotManager.getCurrentUser();
+      docViewer.setWatermark({
+        // Draw diagonal watermark in middle of the document
+        diagonal: {
+          fontSize: 25, // or even smaller size
+          fontFamily: 'sans-serif',
+          color: 'red',
+          opacity: 50, // from 0 to 100
+          text: 'Watermark'
+        },
 
-        annotManager.addAnnotation(rectangleAnnot);
-        // need to draw the annotation otherwise it won't show up until the page is refreshed
-        annotManager.redrawAnnotation(rectangleAnnot);
+        // Draw header watermark
+        header: {
+          fontSize: 10,
+          fontFamily: 'sans-serif',
+          color: 'red',
+          opacity: 70,
+          left: 'left watermark',
+          center: 'center watermark',
+          right: ''
+        }
       });
     });
   }, []);
