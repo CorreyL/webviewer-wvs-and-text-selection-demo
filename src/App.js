@@ -9,7 +9,7 @@ const App = () => {
   useEffect(() => {
     WebViewer(
       {
-        path: '/webviewer/lib',
+        path: 'https://correyl.github.io/webviewer-wvs-and-text-selection-demo/webviewer/lib',
         initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/PDFTRON_about.pdf',
         pdftronServer: 'http://70.68.132.17:8090/',
       },
