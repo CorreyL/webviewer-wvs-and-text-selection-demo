@@ -15,8 +15,8 @@ const App = () => {
       },
       viewer.current,
     ).then((instance) => {
-      const { docViewer, Annotations } = instance;
-      const annotManager = docViewer.getAnnotationManager();
+      const { Tools } = instance;
+      Tools.Tool.ENABLE_TEXT_SELECTION = false;
 
       docViewer.on('documentLoaded', () => {
         const rectangleAnnot = new Annotations.RectangleAnnotation();
