@@ -11,6 +11,7 @@ const App = () => {
       {
         path: '/webviewer/lib',
         initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/PDFTRON_about.pdf',
+        pdftronServer: 'http://70.68.132.17:8090/',
       },
       viewer.current,
     ).then((instance) => {
