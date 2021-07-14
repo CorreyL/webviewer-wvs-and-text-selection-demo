@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/webviewer-react-sample/precache-manifest.2a196449256858d5c525c9aab4e91b65.js"
+  "/webviewer-wvs-and-text-selection-demo/precache-manifest.f09afab66b13f308d1b84256e6689b00.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/webviewer-react-sample/index.html", {
+workbox.routing.registerNavigationRoute("/webviewer-wvs-and-text-selection-demo/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
